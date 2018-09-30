@@ -16,8 +16,9 @@ class ChangeLog extends \yii\db\ActiveRecord
     {
         return [
             [['version', 'description', 'date'], 'required'],
-            [['version', 'description'], 'string'],
-            [['version'], 'string', 'max' => 255],
+            ['description', 'string'],
+            ['version', 'string', 'max' => 255],
+            ['version', 'trim'],
             ['description', FarsiCharactersValidator::class],
             ['date', JalaliDateToTimestamp::class]
         ];
