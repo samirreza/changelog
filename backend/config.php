@@ -1,20 +1,10 @@
 <?php
 return [
     'title' => 'سابقه تغییرات',
-    'menu' => [
+    'menu' =>[
         'label' => 'سابقه تغییرات',
-        'icon' => 'copyright',
-        'items' => [
-            [
-                'label' => 'نسخه جدید',
-                'url' => ['/changelog/manage/create'],
-                'visible' =>  Yii::$app->user->canAccessAny(['superuser'])
-            ],
-            [
-                'label' => 'سابقه تغییرات',
-                'url' => ['/changelog/manage/index'],
-                'visible' =>  Yii::$app->user->canAccessAny(['superuser'])
-            ]
-        ]
+        'url' => ['/changelog/manage/list'],
+        'icon' => 'user',
+        'visible' => Yii::$app->user->can('superuser')
     ]
 ];

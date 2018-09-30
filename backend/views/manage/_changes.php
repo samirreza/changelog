@@ -1,15 +1,14 @@
-<h3>
-    <span>نسخه :</span>
-    <label class="label label-primary" style="padding-top: 0%;padding-bottom: 0;">
-        <?php echo $model->version; ?>
-    </label>
-</h3>
-<p>
-    <i class="fa fa-clock-o"></i> <span>تاریخ بروزرسانی : </span>
-     <?php echo Yii::$app->formatter->asDate($model->createdAt); ?>
-</p>
-<hr>
-<p><?php echo $model->description; ?></p>
-<hr>
-
-
+<?php
+$this->title = 'سابقه تغییرات';
+?>
+<div class="block">
+    <div class="block_content">
+        <h2 class="title">
+            <a> نسخه : <?php echo $model->version; ?></a>
+        </h2>
+        <div class="byline">
+            <span>  تاریخ بروزرسانی : <?php echo Yii::$app->formatter->asDate($model->updatedAt); ?>  </span>
+        </div>
+        <p class="excerpt"><?php echo $model->description; ?></p>
+    </div>
+</div>

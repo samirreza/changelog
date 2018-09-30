@@ -38,7 +38,7 @@ class ManageController extends AdminController
     public function actionList()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => ChangeLog::find()->addOrderBy('createdAt DESC'),
+            'query' => ChangeLog::find()->addOrderBy('updatedAt DESC'),
         ]);
         return $this->render('list', [
             'dataProvider' => $dataProvider,
