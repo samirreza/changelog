@@ -4,11 +4,11 @@ namespace modules\changelog\controllers;
 
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
-use core\controllers\AdminController;
 use modules\changelog\models\ChangeLog;
+use core\controllers\AjaxAdminController;
 use modules\changelog\models\ChangeLogSearch;
 
-class ManageController extends AdminController
+class ManageController extends AjaxAdminController
 {
     public function behaviors()
     {

@@ -7,17 +7,22 @@ use yii\widgets\ActiveForm;
 use core\widgets\editor\Editor;
 use theme\widgets\jalalidatepicker\JalaliDatePicker;
 
-$backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
+Yii::$app->assetManager->bundles['yii\bootstrap\BootstrapAsset'] = false;
 ?>
 <div class="changeLog-form">
+    <?php Panel::begin([
+        'title' => 'سابقه تغییرات',
+        'showCloseButton' => true
+    ]) ?>
     <?php $form = ActiveForm::begin([
-        'options' => ['enctype' => 'multipart/form-data']
-    ]); ?>
+        'options' => [
+            'enctype' => 'multipart/form-data',
+            'class' => 'sliding-form'
+        ]
+    ]) ?>
     <div class="row">
         <div class="col-md-8">
-            <?php Panel::begin([
-                'title' => 'سابقه تغییرات'
-            ]) ?>
+
             <div class="row">
                 <div class="col-md-6">
                     <?=
@@ -50,33 +55,23 @@ $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
                     ['preset' => 'advanced']
                 )
             ?>
-            <?php Panel::end() ?>
         </div>
         <div class="col-md-4">
-            <?php Panel::begin([
-                'title' => 'دخیره اطلاعات'
+            <?= Html::submitButton('<i class="fa fa-save"></i> ذخیره', [
+                'class' => 'btn btn-lg btn-success'
             ]) ?>
-            <?=
-            Html::submitButton(
-                '<i class="fa fa-save"></i> ذخیره',
-                [
-                    'class' => 'btn btn-lg btn-success'
-                ]
-            )
-            ?>
             <?= Button::widget([
                 'label' => 'انصراف',
-                'options' => ['class' => 'btn-lg'],
+                'options' => ['class' => 'btn-lg close-sliding-form-button'],
                 'type' => 'warning',
                 'icon' => 'undo',
-                'url' => $backLink,
-            ])
-            ?>
-            <?php Panel::end() ?>
-
+                'url' => ['index']
+            ]) ?>
         </div>
+
     </div>
-    <?php ActiveForm::end(); ?>
+    <?php ActiveForm::end() ?>
+    <?php Panel::end() ?>
 </div>
 
 

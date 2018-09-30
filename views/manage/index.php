@@ -12,15 +12,25 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="changeLog-manage-index">
     <?= ActionButtons::widget([
         'buttons' => [
-            'create' => ['label' => 'نسخه جدید'],
+            'create' => [
+                'label' => 'نسخه جدید',
+                'options' => [
+                    'class' => 'ajaxcreate',
+                    'data-gridpjaxid' => 'changelog-gridviewpjax'
+                ]
+            ],
         ],
     ]); ?>
+
+    <div class="sliding-form-wrapper"></div>
+
+
     <?php Panel::begin([
         'title' => Html::encode($this->title)
     ]) ?>
     <?php Pjax::begin([
-        'id' => 'post-gridviewpjax',
-        'enablePushState' => false,
+        'id' => 'changelog-gridviewpjax',
+        'enablePushState' => false
     ]); ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -33,9 +43,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'date',
                 'filter' => false
             ],
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+            [
+                'class' => 'core\grid\AjaxActionColumn',
+                'template' => '{view} {update} {delete}'
+            ]
+        ]
+    ]) ?>
     <?php Pjax::end(); ?>
     <?php Panel::end() ?>
 </div>

@@ -8,30 +8,14 @@ $this->title = $model->version;
 $this->params['breadcrumbs'][] = ['label' => 'سابقه تغییرات', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="changeLog-manage-view">
-    <?= ActionButtons::widget([
-        'modelID' => $model->id,
-        'buttons' => [
-            'update' => ['label' => 'ویرایش'],
-            'delete' => ['label' => 'حذف'],
-            'create' => ['label' => 'نسخه جدید'],
-            'index' => ['label' => 'سابقه تغییرات'],
-        ],
-    ]); ?>
+<div class="changeLog-view">
     <div class="row">
-        <div class="col-md-7">
-            <?php Panel::begin([
-                'title' => 'تغییرات سیستم',
-            ]) ?>
-            <div class="well">
-                <?= $model->description ?>
-            </div>
-            <?php Panel::end() ?>
-        </div>
-        <div class="col-md-5">
-            <?php Panel::begin([
-                'title' => 'سایر اطلاعات',
-            ]) ?>
+        <?php Panel::begin([
+            'title' => 'تغییرات سیستم',
+            'showCloseButton' => true
+        ]) ?>
+        <div class="col-md-6">
+
             <?= DetailView::widget([
                 'model' => $model,
                 'attributes' => [
@@ -40,7 +24,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     'date:date',
                 ],
             ]) ?>
-            <?php Panel::end() ?>
         </div>
+        <div class="col-md-6">
+            <div class="well">
+                <?= $model->description ?>
+            </div>
+        </div>
+        <?php Panel::end() ?>
     </div>
 </div>
