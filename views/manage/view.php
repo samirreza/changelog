@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attributes' => [
                     'id:farsiNumber',
                     'version',
-                    'createdAt:date',
+                    'date:date',
                 ],
             ]) ?>
             <?php Panel::end() ?>

@@ -4,7 +4,7 @@ return [
     'menu' =>[
         'label' => 'سابقه تغییرات',
         'url' => ['/changelog/manage/list'],
-        'icon' => 'user',
+        'icon' => 'calendar',
         'visible' => Yii::$app->user->can('superuser')
     ]
 ];

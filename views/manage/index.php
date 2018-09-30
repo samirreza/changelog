@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             'version',
             [
-                'attribute' => 'createdAt',
+                'attribute' => 'date',
                 'format' => 'date',
                 'filter' => false
             ],

@@ -2,6 +2,7 @@
 
 namespace modules\changelog\models;
 
+use extensions\i18n\validators\JalaliDateToTimestamp;
 use extensions\i18n\validators\FarsiCharactersValidator;
 
 class ChangeLog extends \yii\db\ActiveRecord
@@ -21,10 +22,11 @@ class ChangeLog extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['version', 'description'], 'required'],
+            [['version', 'description', 'date'], 'required'],
             [['version', 'description'], 'string'],
             [['version'], 'string', 'max' => 255],
-            [['description'], FarsiCharactersValidator::className()]
+            [['description'], FarsiCharactersValidator::className()],
+            [['date'], JalaliDateToTimestamp::className()]
         ];
     }
 
@@ -33,10 +35,10 @@ class ChangeLog extends \yii\db\ActiveRecord
         return [
             'id' => 'شناسه',
             'version' => 'نسخه',
+            'date' => 'تاریخ بروزرسانی',
             'description' => 'توضیحات',
-            'createdAt' => 'تاریخ بروزرسانی',
+            'createdAt' => 'تاریخ درج',
             'updatedAt' => 'آخرین بروزرسانی',
         ];
     }
-
 }
