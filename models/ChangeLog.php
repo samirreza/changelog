@@ -12,33 +12,23 @@ class ChangeLog extends \yii\db\ActiveRecord
         return 'change_log';
     }
 
-    public function behaviors()
-    {
-        return [
-            'core\behaviors\TimestampBehavior',
-        ];
-    }
-
     public function rules()
     {
         return [
             [['version', 'description', 'date'], 'required'],
             [['version', 'description'], 'string'],
             [['version'], 'string', 'max' => 255],
-            [['description'], FarsiCharactersValidator::className()],
-            [['date'], JalaliDateToTimestamp::className()]
+            ['description', FarsiCharactersValidator::class],
+            ['date', JalaliDateToTimestamp::class]
         ];
     }
 
     public function attributeLabels()
     {
         return [
-            'id' => 'شناسه',
             'version' => 'نسخه',
             'date' => 'تاریخ بروزرسانی',
-            'description' => 'توضیحات',
-            'createdAt' => 'تاریخ درج',
-            'updatedAt' => 'آخرین بروزرسانی',
+            'description' => 'توضیحات'
         ];
     }
 }

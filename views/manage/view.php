@@ -1,13 +1,10 @@
 <?php
 
-use yii\widgets\DetailView;
 use theme\widgets\Panel;
-use theme\widgets\ActionButtons;
+use yii\widgets\DetailView;
 
-$this->title = $model->version;
-$this->params['breadcrumbs'][] = ['label' => 'سابقه تغییرات', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="changeLog-view">
     <div class="row">
         <?php Panel::begin([
@@ -15,14 +12,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'showCloseButton' => true
         ]) ?>
         <div class="col-md-6">
-
             <?= DetailView::widget([
                 'model' => $model,
                 'attributes' => [
-                    'id:farsiNumber',
                     'version',
-                    'date:date',
-                ],
+                    'date:date'
+                ]
             ]) ?>
         </div>
         <div class="col-md-6">

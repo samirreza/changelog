@@ -1,7 +1,8 @@
 <?php
+
 return [
     'title' => 'سابقه تغییرات',
-    'menu' =>[
+    'menu' => [
         'label' => 'سابقه تغییرات',
         'url' => ['/changelog/manage/list'],
         'icon' => 'calendar',

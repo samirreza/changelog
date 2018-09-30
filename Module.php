@@ -4,11 +4,10 @@ namespace modules\changelog;
 
 class Module extends \yii\base\Module
 {
-	public $title;
+    public $title;
     public $menu;
-	public $defaultRoute = 'manage/index';
+    public $defaultRoute = 'manage/index';
     public $controllerNamespace = 'modules\changelog\controllers';
-    public $editableSlug = false;
 
     public function init()
     {

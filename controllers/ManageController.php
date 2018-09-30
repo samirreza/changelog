@@ -16,11 +16,11 @@ class ManageController extends AjaxAdminController
             parent::behaviors(),
             [
                 'access' => [
-                    'class' => AccessControl::className(),
+                    'class' => AccessControl::class,
                     'rules' => [
                         [
                             'allow' => true,
-                            'roles' => ['superuser'],
+                            'roles' => ['superuser']
                         ]
                     ]
                 ]
@@ -38,10 +38,10 @@ class ManageController extends AjaxAdminController
     public function actionList()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => ChangeLog::find()->addOrderBy('updatedAt DESC'),
+            'query' => ChangeLog::find()->addOrderBy('id DESC')
         ]);
         return $this->render('list', [
-            'dataProvider' => $dataProvider,
+            'dataProvider' => $dataProvider
         ]);
     }
 }

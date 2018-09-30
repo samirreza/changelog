@@ -13,9 +13,7 @@ class m090818_131820_create_change_log_table extends Migration
         $this->createTable('change_log', [
             'id' => $this->primaryKey(),
             'version' => $this->string()->notNull(),
-            'description' => $this->text()->notNull(),
-            'createdAt' => $this->integer()->notNull(),
-            'updatedAt' => $this->integer()->notNull(),
+            'description' => $this->text()->notNull()
         ], $tableOptions);
     }
 

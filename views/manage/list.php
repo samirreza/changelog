@@ -1,5 +1,10 @@
 <?php
+
 use yii\widgets\ListView;
+
+$this->title = 'سابقه تغییرات';
+$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 
 <div class="x_panel">
@@ -7,11 +12,11 @@ use yii\widgets\ListView;
         <div class="dashboard-widget-content">
             <ul class="list-unstyled timeline widget">
                 <li>
-                    <?php echo ListView::widget([
+                    <?= ListView::widget([
                         'dataProvider' => $dataProvider,
                         'itemView' => '_changes',
                         'layout' => "{items}\n{pager}"
-                    ]); ?>
+                    ]) ?>
                 </li>
             </ul>
         </div>

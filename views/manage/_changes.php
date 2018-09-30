@@ -1,14 +1,11 @@
-<?php
-$this->title = 'سابقه تغییرات';
-?>
 <div class="block">
     <div class="block_content">
         <h2 class="title">
-            <a> نسخه : <?php echo $model->version; ?></a>
+            <b><span> نسخه : <?= $model->version ?></span></b>
         </h2>
         <div class="byline">
-            <span>  تاریخ بروزرسانی : <?php echo Yii::$app->formatter->asDate($model->updatedAt); ?>  </span>
+            <span>تاریخ بروزرسانی : <?= Yii::$app->formatter->asDate($model->date) ?></span>
         </div>
-        <p class="excerpt"><?php echo $model->description; ?></p>
+        <p class="excerpt"><?= $model->description ?></p>
     </div>
 </div>
