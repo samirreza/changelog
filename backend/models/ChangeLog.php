@@ -38,5 +38,4 @@ class ChangeLog extends \yii\db\ActiveRecord
             'updatedAt' => 'آخرین بروزرسانی',
         ];
     }
-
 }

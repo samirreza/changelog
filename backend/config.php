@@ -1,8 +1,8 @@
 <?php
 return [
-    'title' => 'سابقه تغییرات',
+    'title' => 'تاریخچه تغییرات',
     'menu' =>[
-        'label' => 'سابقه تغییرات',
+        'label' => 'تاریخچه تغییرات',
         'url' => ['/changelog/manage/list'],
         'icon' => 'user',
         'visible' => Yii::$app->user->can('superuser')
