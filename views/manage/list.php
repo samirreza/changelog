@@ -1,24 +1,16 @@
 <?php
 
-use yii\widgets\ListView;
+use theme\widgets\updateBox\UpdateBox;
 
 $this->title = 'سابقه تغییرات';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 
-<div class="x_panel">
-    <div class="x_content">
-        <div class="dashboard-widget-content">
-            <ul class="list-unstyled timeline widget">
-                <li>
-                    <?= ListView::widget([
-                        'dataProvider' => $dataProvider,
-                        'itemView' => '_changes',
-                        'layout' => "{items}\n{pager}"
-                    ]) ?>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+<?=
+UpdateBox::widget([
+    'lastUpdate' => $lastUpdates,
+    'showLink' => false,
+    'visible' => Yii::$app->user->can('superuser')
+])
+?>

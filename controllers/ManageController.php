@@ -37,11 +37,9 @@ class ManageController extends AjaxAdminController
 
     public function actionList()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => ChangeLog::find()->addOrderBy('id DESC')
-        ]);
+        $lastUpdates = ChangeLog::find()->orderBy(['date' => SORT_DESC])->all();
         return $this->render('list', [
-            'dataProvider' => $dataProvider
+            'lastUpdates' => $lastUpdates
         ]);
     }
 }
