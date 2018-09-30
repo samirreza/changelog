@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\changelog\backend\models;
+namespace modules\changelog\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;

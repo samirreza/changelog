@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\changelog\backend\models;
+namespace modules\changelog\models;
 
 use extensions\i18n\validators\FarsiCharactersValidator;
 

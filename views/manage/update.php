@@ -1,6 +1,6 @@
 <?php
 
-use themes\admin360\widgets\ActionButtons;
+use theme\widgets\ActionButtons;
 
 $this->title = 'ویرایش نسخه';
 $this->params['breadcrumbs'][] = ['label' => 'سابقه تغییرات', 'url' => ['index']];

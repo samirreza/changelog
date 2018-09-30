@@ -1,13 +1,13 @@
 <?php
 
-namespace modules\changelog\backend;
+namespace modules\changelog;
 
 class Module extends \yii\base\Module
 {
 	public $title;
     public $menu;
 	public $defaultRoute = 'manage/index';
-    public $controllerNamespace = 'modules\changelog\backend\controllers';
+    public $controllerNamespace = 'modules\changelog\controllers';
     public $editableSlug = false;
 
     public function init()

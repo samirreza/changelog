@@ -1,12 +1,12 @@
 <?php
 
-namespace modules\changelog\backend\controllers;
+namespace modules\changelog\controllers;
 
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
 use core\controllers\AdminController;
-use modules\changelog\backend\models\ChangeLog;
-use modules\changelog\backend\models\ChangeLogSearch;
+use modules\changelog\models\ChangeLog;
+use modules\changelog\models\ChangeLogSearch;
 
 class ManageController extends AdminController
 {

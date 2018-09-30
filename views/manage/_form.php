@@ -3,8 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use core\widgets\editor\Editor;
-use themes\admin360\widgets\Panel;
-use themes\admin360\widgets\Button;
+use theme\widgets\Panel;
+use theme\widgets\Button;
 
 $backLink = $model->isNewRecord ? ['index'] : ['view', 'id' => $model->id];
 ?>
