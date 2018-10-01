@@ -1,14 +1,14 @@
 <?php
 
-namespace modules\changelog\backend\controllers;
+namespace modules\changelog\controllers;
 
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
-use core\controllers\AdminController;
-use modules\changelog\backend\models\ChangeLog;
-use modules\changelog\backend\models\ChangeLogSearch;
+use modules\changelog\models\ChangeLog;
+use core\controllers\AjaxAdminController;
+use modules\changelog\models\ChangeLogSearch;
 
-class ManageController extends AdminController
+class ManageController extends AjaxAdminController
 {
     public function behaviors()
     {
@@ -16,11 +16,11 @@ class ManageController extends AdminController
             parent::behaviors(),
             [
                 'access' => [
-                    'class' => AccessControl::className(),
+                    'class' => AccessControl::class,
                     'rules' => [
                         [
                             'allow' => true,
-                            'roles' => ['superuser'],
+                            'roles' => ['superuser']
                         ]
                     ]
                 ]
@@ -37,11 +37,9 @@ class ManageController extends AdminController
 
     public function actionList()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => ChangeLog::find()->addOrderBy('updatedAt DESC'),
-        ]);
+        $lastUpdates = ChangeLog::find()->orderBy(['date' => SORT_DESC])->all();
         return $this->render('list', [
-            'dataProvider' => $dataProvider,
+            'lastUpdates' => $lastUpdates
         ]);
     }
 }

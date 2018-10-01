@@ -1,10 +1,11 @@
 <?php
+
 return [
     'title' => 'تاریخچه تغییرات',
-    'menu' =>[
+    'menu' => [
         'label' => 'تاریخچه تغییرات',
         'url' => ['/changelog/manage/list'],
-        'icon' => 'user',
+        'icon' => 'calendar',
         'visible' => Yii::$app->user->can('superuser')
     ]
 ];
