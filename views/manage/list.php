@@ -2,7 +2,7 @@
 
 use theme\widgets\updateBox\UpdateBox;
 
-$this->title = 'سابقه تغییرات';
+$this->title = 'تاریخچه تغییرات';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
