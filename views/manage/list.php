@@ -1,6 +1,6 @@
 <?php
 
-use theme\widgets\updateBox\UpdateBox;
+use modules\changelog\widgets\updateBox\UpdateBox;
 
 $this->title = 'تاریخچه تغییرات';
 $this->params['breadcrumbs'][] = $this->title;
